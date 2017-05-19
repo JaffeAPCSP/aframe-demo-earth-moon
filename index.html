@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <meta charset="utf-8">
+    <title>APCSP A-Frame Demo Shapes</title>
+    <meta name="description" content="Hello, World! - A-Frame">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="js/box.js"></script>
+    <script src="js/earth.js"></script>
+  </head>
+  <body>
+    <a-scene> 
+      <a-sky material="color: #87CEEB"></a-sky>
+      <a-entity light="type: ambient; color: #BBB"></a-entity>
+      <a-entity 
+        light="type: directional; color: #EEE; intensity: 1"
+        position="2 7 -3"></a-entity>
+      <a-entity camera look-controls wasd-controls 
+        position="0 1.5 0"
+        rotation="0 0 0"></a-entity>
+      <a-assets>
+        <a-asset-item id="slime-obj" src="assets/slimemodel.obj"></a-asset-item>
+        <a-asset-item id="makey-obj" src="assets/makeytherobot.obj"></a-asset-item>
+      </a-assets>
+      <a-entity box
+        geometry="primitive: box; height: 1; width: 1, depth: 2"
+        rotation="0 20 0"
+        position="-1 4 -6"
+        material="color: #4CC3D9; shader: standard; src: materials/bricks.jpg"
+        ></a-entity>
+      <a-entity earth
+        geometry="primitive: sphere; radius: 1.25"
+        position="0 1.25 -5"
+        material="shader: standard; src: materials/earth.jpg"      
+        ></a-entity>
+      <a-entity 
+        obj-model="obj: #slime-obj"
+        material="src:materials/slimeGreen.png"
+        position="0 0 -3"
+        scale="0.3 0.3 0.3"
+        ></a-entity>   
+      <a-entity 
+        obj-model="obj: #makey-obj"
+        material="src: materials/orange.jpg"
+        position="-2 1 -3"
+        scale="0.05 0.05 0.05"
+        ></a-entity>   
+    </a-scene>
+  </body>
+</html>
